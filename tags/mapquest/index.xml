@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MapQuest on  Social data analysis and visualization (02806)</title>
+    <link>https://EdinDTU.github.io/ProjectB/tags/mapquest/</link>
+    <description>Recent content in MapQuest on  Social data analysis and visualization (02806)</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Apr 2017 10:58:08 -0400</lastBuildDate><atom:link href="https://EdinDTU.github.io/ProjectB/tags/mapquest/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A deeper look into MapQuest data</title>
+      <link>https://EdinDTU.github.io/ProjectB/post/chapter-1/</link>
+      <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
+      
+      <guid>https://EdinDTU.github.io/ProjectB/post/chapter-1/</guid>
+      <description>Add some fancy plots and text here :D
+Link to GitHub Repository</description>
+    </item>
+    
+  </channel>
+</rss>
