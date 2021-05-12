@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>US Accidents on  Social data analysis and visualization (02806)</title>
-    <link>https://EdinDTU.github.io/ProjectB/</link>
-    <description>Recent content in US Accidents on  Social data analysis and visualization (02806)</description>
+    <title>Final Project on  Social data analysis and visualization (02806)</title>
+    <link>https://edindtu.github.io/ProjectB/</link>
+    <description>Recent content in Final Project on  Social data analysis and visualization (02806)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 09 Apr 2017 10:58:08 -0400</lastBuildDate><atom:link href="https://EdinDTU.github.io/ProjectB/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Apr 2017 10:58:08 -0400</lastBuildDate><atom:link href="https://edindtu.github.io/ProjectB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A deeper look into MapQuest data</title>
-      <link>https://EdinDTU.github.io/ProjectB/post/chapter-1/</link>
+      <link>https://edindtu.github.io/ProjectB/post/usaccidents/</link>
       <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
       
-      <guid>https://EdinDTU.github.io/ProjectB/post/chapter-1/</guid>
-      <description>Add some fancy plots and text here :D
-Link to GitHub Repository</description>
+      <guid>https://edindtu.github.io/ProjectB/post/usaccidents/</guid>
+      <description>This is an analysis of countrywide car accidents spanning 49 state in the USA. the accident data are collected from February 2016 to December 2020, using multiple APIs that provide streaming traffic data. Main purpose of this website is to notice any patterns, see if there are hotspot locations, and do a casualty analysis looking at the severity of the accidents.
+ Accident severity counts per state   Add some fancy plots and text here :D</description>
     </item>
     
   </channel>
