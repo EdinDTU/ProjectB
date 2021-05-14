@@ -40,7 +40,7 @@
 <meta itemprop="name" content="A deeper look into MapQuest data">
 <meta itemprop="description" content="MapQuest is a well-renowned company for being able to provide core functions critical to geocoding, routing and traffic. Can their data be useful for visualizing the traffic accidents in the US?"><meta itemprop="datePublished" content="2021-05-11T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2021-05-11T10:58:08-04:00" />
-<meta itemprop="wordCount" content="127">
+<meta itemprop="wordCount" content="558">
 <meta itemprop="keywords" content="MapQuest," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A deeper look into MapQuest data"/>
 <meta name="twitter:description" content="MapQuest is a well-renowned company for being able to provide core functions critical to geocoding, routing and traffic. Can their data be useful for visualizing the traffic accidents in the US?"/>
@@ -178,18 +178,30 @@
       
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><strong>DISCLAIMER!</strong> To view the images in original size, please right click on them and open in a new tab!</p>
-<p>This is an analysis of countrywide car accidents spanning 49 state in the USA. the accident data are collected from February 2016 to December 2020, using multiple APIs that provide streaming traffic data. Main purpose of this website is to notice any patterns, see if there are hotspot locations, and do a casualty analysis looking at the severity of the accidents.</p>
-<figure><img src="https://edindtu.github.io/ProjectB/images/severity.png"/><figcaption>
-            <h4>Accident severity counts per state (open in new tab to view in HD)</h4>
-        </figcaption>
-</figure>
-
-<p><figure><img src="https://edindtu.github.io/ProjectB/images/filetest.html"/><figcaption>
-            <h4>Choropleth (open in new tab to view and interact)</h4>
-        </figcaption>
-</figure>
-
-Add some fancy plots and text here :D</p>
+<h1>Introduction</h1>
+<p>This is an analysis of countrywide car accidents spanning 49 state in the USA. the accident data are collected from February 2016 to December 2020, using multiple APIs that provide streaming traffic data. Main purpose of this website is to notice any patterns, see if there are hotspot locations, and do a casualty analysis looking at the severity of the accidents. One of the sources of data is MapQuest which is a well-renowned company when it comes to everything regarding maps, geocoding, and traffic. Thus, it was chosen to take a deeper look into what kind of data they have collected of car accidents throughout the years.</p>
+<h1>Pandas Profiling</h1>
+<p>Profiling your data is closely related to data validation since it often validation rules are defined in terms of well-known statistics of the data. For that purpose, the <strong>Pandas Profiling</strong> is applied on the dataset. In the following window, following statistics are presented:</p>
+<ul>
+<li><strong>Type inference</strong>: Detect types of columns in the dataframe</li>
+<li><strong>Essentials</strong>: Type, unique values, missing values</li>
+<li><strong>Descriptive statistics</strong>: I.e. mean, mode, standard deviation etc.</li>
+<li><strong>Histograms</strong></li>
+<li><strong>Correlations</strong></li>
+<li><strong>Missing values</strong></li>
+</ul>
+<iframe height="700" width="100%" src="https://edindtu.github.io/ProjectB/images/pandas.html" frameBorder="0"></iframe>
+<p>The dataframe consists of 18 columns and 2,651,861 observations (rows). 4.5% of the observations contain missing/empty cells.
+Scrolling through the profiling some columns are well-distributed (disregarding skewness), such as temperature, humidity. Some also have outliers. Take for example the wind speed. That has an obvious outlier of registering windspeed of 822.8mi/h. Even the minimal winds of a <a href="https://www.nhc.noaa.gov/aboutsshws.php">level 5 hurricane</a> is far below the windspeed of that caliber! The same is the case for pressure, where it was registered that the pressure for an accident was 0 inches Hg (vacuum) or 58.0 inches Hg (twice the atmospheric pressure at sea-level). <br>
+Finally, some of the columns are categorical. For those, it can be assumed from the profiling that majority of the accidents happened during the day and/or during clear and fair weather conditions.</p>
+<p>As mentioned, the profiling also generates a correlation matrix such that a quick and straightforward overview can be made on how much two variables correlate with each other. The correlation matrix in the profiling doesn&rsquo;t show promising results as only two pairs of columns has largest negative correlation on each other. Those two pairs being that has high correlations are: <strong>Temperature &amp; Latitude</strong> and <strong>Humidity &amp; Visibility</strong> while <strong>Temperature &amp; Humidity</strong> correlates slightly negatively. For the first pair it makes sense that as latitude decreases (moving south on a map) the temperature increases as you move from continental regions to more dry and tropical areas. The second pair is also understandable since lower humidity (i.e. lower chance for fog) increases the visibility. Lastly, the third pair (once again) makes sense, since the air can hold more water molecules as the temperature increases, thus decreasing the humidity (<a href="https://sciencing.com/happens-relative-humidity-air-temperature-rises-22563.html">Source</a>).</p>
+<p>Lastly for the profiling, the missing values area has a heatmap tab which shows how the missing values correlates with each other. It should be understood as when temperature value is missing for an observation, it will most likely also miss a value for humidity and vice versa.</p>
+<h1>Visualizations of the dataset</h1>
+<img height="800" width="1000" src="https://edindtu.github.io/ProjectB/images/severity.png" />
+<p>Add some fancy plots and text here :D</p>
+<iframe height="500" width="100%" src="https://edindtu.github.io/ProjectB/images/filetest.html" frameBorder="0"></iframe>
+<h1>Outlier analysis</h1>
+<h1>Conclusion</h1>
 <p>Go to <a href="https://edindtu.github.io/ProjectB/about/">about us</a> to see who we are and distributions of tasks!</p>
 <p><a href="https://github.com/kito323/02806_SocialDataGroup">Link to GitHub Repository</a></p>
 <ul class="pa0">
