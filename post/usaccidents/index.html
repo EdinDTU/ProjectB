@@ -40,7 +40,7 @@
 <meta itemprop="name" content="A deeper look into MapQuest data">
 <meta itemprop="description" content="MapQuest is a well-renowned company for being able to provide core functions critical to geocoding, routing and traffic. Can their data be useful for visualizing the traffic accidents in the US?"><meta itemprop="datePublished" content="2021-05-14T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2021-05-14T10:58:08-04:00" />
-<meta itemprop="wordCount" content="2459">
+<meta itemprop="wordCount" content="2533">
 <meta itemprop="keywords" content="MapQuest," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A deeper look into MapQuest data"/>
 <meta name="twitter:description" content="MapQuest is a well-renowned company for being able to provide core functions critical to geocoding, routing and traffic. Can their data be useful for visualizing the traffic accidents in the US?"/>
@@ -94,7 +94,7 @@
 
 
 
-<a href="https://github.com/kito323/02806_SocialDataGroup" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+<a href="https://github.com/EdinDTU/ProjectB" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
   <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
   <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
 </svg>
@@ -179,7 +179,9 @@
     </header>
     <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><strong>DISCLAIMER!</strong> Please wait for a minute or two and take a sip of your coffee as the site loads up completely!</p>
 <h1>Introduction</h1>
-<p>This is an analysis of countrywide car accidents spanning 49 state in the USA. the accident data are collected from February 2016 to December 2020, using multiple APIs that provide streaming traffic data. Main purpose of this website is to notice any patterns, see if there are hotspot locations, and do a casualty analysis looking at the severity of the accidents. One of the sources of data is MapQuest which is a well-renowned company when it comes to everything regarding maps, geocoding, and traffic. Thus, it was chosen to take a deeper look into what kind of data they have collected of car accidents throughout the years.</p>
+<p>This is an analysis of countrywide car accidents spanning 49 state in the USA. The accident data are collected from February 2016 to December 2020, using multiple APIs that provide streaming traffic data. Main purpose of this website is to notice any patterns, see if there are hotspot locations, and do a casualty analysis looking at the severity of the accidents. One of the sources of data is MapQuest which is a well-renowned company when it comes to everything regarding maps, geocoding, and traffic. Thus, it was chosen to take a deeper look into what kind of data they have collected of car accidents throughout the years.</p>
+<p>The dataset was original found on Kaggle, but since then, the author has updated the .csv inwhich he/she has removed the mapQuest data, thus rendering our work useless. The latest dataset is version 10, while the dataset used for this work is version 8.</p>
+<p><a href="https://drive.google.com/file/d/1BxiY1NjjimXG26mR6SH_jdchRh_efzuu/view?usp=sharing">Link to dataset (version 8)</a></p>
 <h1>Pandas Profiling on raw data</h1>
 <p>Profiling your data is closely related to data validation since it often validation rules are defined in terms of well-known statistics of the data. For that purpose, the <strong>Pandas Profiling</strong> is applied on the dataset. In the following window, following statistics are presented:</p>
 <ul>
@@ -190,7 +192,6 @@
 <li><strong>Correlations</strong></li>
 <li><strong>Missing values</strong></li>
 </ul>
-<iframe height="700" width="100%" src="https://edindtu.github.io/ProjectB/images/PandasRaw.html" frameBorder="0"></iframe>
 <p>The dataframe consists of 49 columns and 4,232,541 observations (rows). 7.1% of the cells are empty. Of the 49 columns 22 are categorical, 14 numeric and 13 boolean. From the 49 columns, 14 were selected for further processing. The selected features are:</p>
 <ul>
 <li>Source (Categorical)</li>
@@ -208,6 +209,7 @@
 <li>Precipitation (Numeric)</li>
 <li>Weather Condition (Categorical)</li>
 </ul>
+<iframe height="700" width="100%" src="https://edindtu.github.io/ProjectB/images/PandasRaw.html" frameBorder="0"></iframe>
 <p>Scrolling through the profiling some columns are well-distributed (disregarding skewness), such as temperature, humidity. Some also have clear outliers, such as wind speed and pressure. We will take a closer look into the outliers in the next section.</p>
 <h1>Outlier Analysis</h1>
 <p>An easy way to see outliers is by generating box plots for the numeric features listed above, resulting in a total of eight boxplots.</p>
@@ -227,7 +229,7 @@
 <p>The visibility feature looks a bit peculiar. According to a paper called <em>Introduction to atmospheric visibility estimation</em> by Bennett, A. (2012)  The highest visibility can be, is around 30 km, or 18 miles. But in all honesty there are sparse sources on this topic. Thus, this feature will be omitted.</p>
 <p>Regarding the precipitation, <a href="https://water.usgs.gov/edu/activity-howmuchrain-metric.html">0.3 inches of rain per hour</a> is considered heavy rainfall. The boxplot shows significantly larger values, but if multiplying the rain per hour by 24h, <a href="https://www.thoughtco.com/measuring-precipitation-1435346">as is common practice in the US</a>, it overlaps with the values given in the dataset, and thus, this feature doesn&rsquo;t contain any outliers.</p>
 <p>Finally, the wind speed is in focus. That has an obvious outlier of registering windspeed of 822.8mi/h. Even the minimal winds of a <a href="https://www.nhc.noaa.gov/aboutsshws.php">level 5 hurricane</a> is far below the windspeed of that caliber! A max threshold of 200 mi/h has been set anyways, to account for accidents that happened during hurricane season during the four year span of this dataset.</p>
-<p>A view of the categorical features will be omitted on this website, since they don&rsquo;t contain any crucial information. If wanted, a list of all of the given wind directions and weather conditions can be seen in the notebook.</p>
+<p>A view of the categorical features will be omitted on this website, since they don&rsquo;t contain any crucial information. If wanted, a list of all of the given wind directions and weather conditions can be seen in the explainer notebook.</p>
 <h1>Pandas profiler on cleaned data</h1>
 <iframe height="700" width="100%" src="https://edindtu.github.io/ProjectB/images/pandas_clean.html" frameBorder="0"></iframe>
 <p>Source has been set to MapQuest and the visibility has ben omitted. Thus, 12 features are used for the upcoming work.</p>
@@ -282,8 +284,8 @@ It would be interesting to investigate whether location and weather influence th
  <figcaption>Fig.6 - Distribution of severity types.</figcaption>
 </figure>
 <p>It can be immediately seen, that there&rsquo;s a lot of data but a huge class imbalance. Many machine learning algorithms do not perform well for imbalanced classes, but in this case, a subset can be chosen such that we end up with a balanced dataset. This is done by randomly deleting rows in the dataset such that we in the end get an equal distribution for each severity class. <br>
-If some of the rows of numeric features of the final dataset contain missing value, imputation will be used. For the case of categorical features, the rows will simply be removed.</p>
-<p>A <strong>decision tree model classifier</strong> will be applied as well as <strong>AdaBoost</strong>. The reason for the AdaBoost is because decision trees can suffer from high variance, and the tree structure can change completely when new data is added. Lastly, the training will undergo a 5-fold cross validation. If wanted, the entire setup can be seen in the notebook.</p>
+If some of the rows of numeric features of the balanced dataset contain missing value, imputation will be used. In the unbalanced case, we have enough data, so we can simply drop all missing values without imputing anything. For the case of categorical features in the unbalanced case, the rows will simply be removed.</p>
+<p>A <strong>decision tree model classifier</strong> will be applied as well as <strong>AdaBoost</strong>. The reason for the AdaBoost is because decision trees can suffer from high variance, and the tree structure can change completely when new data is added. Lastly, the training will undergo a 5-fold cross validation. If wanted, the entire setup can be seen in the explainer notebook.</p>
 <p>The performance will be measured using an <a href="https://machinelearningmastery.com/classification-accuracy-is-not-enough-more-performance-measures-you-can-use/"><strong>F1-score</strong></a>.</p>
 <p>The best result of the cross-validation yielded a F1-score of <strong>0.38</strong>. Considering that it is a four class classification problem, the model performed better than randomly guessing, but still not very good.</p>
 <p>To visualize the performance a confusion matrix can be made as well as overview of the development of the F1 score for training and test as a function of the learning rate.</p>
@@ -306,12 +308,12 @@ If some of the rows of numeric features of the final dataset contain missing val
  <figcaption>Fig.9 - Features ranked after importance for the prediction</figcaption>
 </figure>
 <p>It makes sense that the longitude and latitude (location) accounts for most prediction as it would be expected that there are some areas in the US which is a hotspot for accidents. Furthermore, according to the figure above, weather features doesn&rsquo;t seem to a large influence on severity of accidents.</p>
-<p><em><em>So the take-home message is to look where you&rsquo;re driving, look often in the rearview and side mirrors, and use your f</em>@!#&amp;$&quot; turn signal!</em>*</p>
+<p><b>So the take-home message is to look where you&rsquo;re driving, look often in the rearview and side mirrors, and use your f*@!#&amp;$&quot; turn signal!</b></p>
 <h1>Conclusion</h1>
 MapQuest is a well renowned company when it comes to traffic. To begin around 4.2 million datapoints were presented in the original dataset. After a thorough outlier analysis, 12 features were selected from the 49 in the original dataset. The main focus was to create a visualization of accidents and the severity of them. Trying to even the playing field, data from U.S. Department of Transportation was included, which contained information about the miles driven every month for each state. Timelapses were generated which should that the states with the most infrastructure had also the highest amount of miles driven. But trying to calculate accidents based on miles driven it was South Carolina that took the lead. What was also noticed was sudden rises in accidents from 2018, with no certainty on why that happened.
 <p>Finally, a decision tree was applied to investigate whether location and weather influence the severity of accidents or not. Because of the unbalanced distribution of severity types, the classifier was first applied on a balanced subset, which yielded an F1-score of 0.38, and was thus deemed to be a poor model. When classifying on a the unbalanced dataset the performance improved significantly with an F1-score of 0.78. Finally, it was shown that the location had the highest influence on the severity of the accidents while the weather had not so much.</p>
 <p>Go to <a href="https://edindtu.github.io/ProjectB/about/">about us</a> to see who we are and distributions of tasks!</p>
-<p><a href="https://github.com/kito323/02806_SocialDataGroup">Link to GitHub Repository</a></p>
+<p><a href="https://github.com/EdinDTU/ProjectB">Link to GitHub Repository</a></p>
 <ul class="pa0">
   
    <li class="list">
@@ -349,7 +351,7 @@ MapQuest is a well renowned company when it comes to traffic. To begin around 4.
 
 
 
-<a href="https://github.com/kito323/02806_SocialDataGroup" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
+<a href="https://github.com/EdinDTU/ProjectB" target="_blank" class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel="noopener" aria-label="follow on Github——Opens in a new window">
   <svg  height="32px"  style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
   <path d="M256,32C132.3,32,32,134.8,32,261.7c0,101.5,64.2,187.5,153.2,217.9c11.2,2.1,15.3-5,15.3-11.1   c0-5.5-0.2-19.9-0.3-39.1c-62.3,13.9-75.5-30.8-75.5-30.8c-10.2-26.5-24.9-33.6-24.9-33.6c-20.3-14.3,1.5-14,1.5-14   c22.5,1.6,34.3,23.7,34.3,23.7c20,35.1,52.4,25,65.2,19.1c2-14.8,7.8-25,14.2-30.7c-49.7-5.8-102-25.5-102-113.5   c0-25.1,8.7-45.6,23-61.6c-2.3-5.8-10-29.2,2.2-60.8c0,0,18.8-6.2,61.6,23.5c17.9-5.1,37-7.6,56.1-7.7c19,0.1,38.2,2.6,56.1,7.7   c42.8-29.7,61.5-23.5,61.5-23.5c12.2,31.6,4.5,55,2.2,60.8c14.3,16.1,23,36.6,23,61.6c0,88.2-52.4,107.6-102.3,113.3   c8,7.1,15.2,21.1,15.2,42.5c0,30.7-0.3,55.5-0.3,63c0,6.1,4,13.3,15.4,11C415.9,449.1,480,363.1,480,261.7   C480,134.8,379.7,32,256,32z"/>
 </svg>
