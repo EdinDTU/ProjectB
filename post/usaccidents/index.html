@@ -40,7 +40,7 @@
 <meta itemprop="name" content="A deeper look into MapQuest data">
 <meta itemprop="description" content="MapQuest is a well-renowned company for being able to provide core functions critical to geocoding, routing and traffic. Can their data be useful for visualizing the traffic accidents in the US?"><meta itemprop="datePublished" content="2021-05-11T10:58:08-04:00" />
 <meta itemprop="dateModified" content="2021-05-11T10:58:08-04:00" />
-<meta itemprop="wordCount" content="558">
+<meta itemprop="wordCount" content="774">
 <meta itemprop="keywords" content="MapQuest," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="A deeper look into MapQuest data"/>
 <meta name="twitter:description" content="MapQuest is a well-renowned company for being able to provide core functions critical to geocoding, routing and traffic. Can their data be useful for visualizing the traffic accidents in the US?"/>
@@ -197,7 +197,20 @@ Finally, some of the columns are categorical. For those, it can be assumed from 
 <p>As mentioned, the profiling also generates a correlation matrix such that a quick and straightforward overview can be made on how much two variables correlate with each other. The correlation matrix in the profiling doesn&rsquo;t show promising results as only two pairs of columns has largest negative correlation on each other. Those two pairs being that has high correlations are: <strong>Temperature &amp; Latitude</strong> and <strong>Humidity &amp; Visibility</strong> while <strong>Temperature &amp; Humidity</strong> correlates slightly negatively. For the first pair it makes sense that as latitude decreases (moving south on a map) the temperature increases as you move from continental regions to more dry and tropical areas. The second pair is also understandable since lower humidity (i.e. lower chance for fog) increases the visibility. Lastly, the third pair (once again) makes sense, since the air can hold more water molecules as the temperature increases, thus decreasing the humidity (<a href="https://sciencing.com/happens-relative-humidity-air-temperature-rises-22563.html">Source</a>).</p>
 <p>Lastly for the profiling, the missing values area has a heatmap tab which shows how the missing values correlates with each other. It should be understood as when temperature value is missing for an observation, it will most likely also miss a value for humidity and vice versa.</p>
 <h1>Visualizations of the dataset</h1>
-<img height="800" width="1000" src="https://edindtu.github.io/ProjectB/images/severity.png" />
+<p>The first challenge that emerges with this dataset is that it is expected that states with densely populated states with miles upon miles of infrastructure for cars and other motor vehicles would showcase high number of accidents. Thus rendering the following analysis useless, since those state would overshadow other lightly populated areas. To circumvent this obstacle it is necessary to include the vehicle-miles driven for each state. This information is extracted from the <a href="https://www.fhwa.dot.gov/policyinformation/travel_monitoring/tvt.cfm?fbclid=IwAR3RHvNbO9okcBFLD1-4gCz2JZezDDn2zV1D6GlTpI_0xc-mWyZjjFSYCAA">U.S. Department of Transportation</a>. They have monthly report based on hourly traffic count data reported by each individual state. They do this to estimate the percent change in traffic for the current month compared to the same month in the previous year. In their <a href="https://www.fhwa.dot.gov/ohim/tvtw/tvtfaq.cfm">FAQ</a> they further explain that each state should have six permanent sites for each grouping of classified roadway. the roadways are as follows:</p>
+<ul>
+<li>Interstate</li>
+<li>Principal Arterial</li>
+<li>Minor Arterial</li>
+<li>Major Collector</li>
+<li>Minor Collector</li>
+<li>Local</li>
+<li>Trail or Shared Use Path</li>
+</ul>
+<p>Thus, their data was deemed trustworthy and suitable for this task.</p>
+<p>The severity of the accidents were plotted and divided with the vehicle-miles(millions) for all roads, which yields following figure:
+<img height="800" width="1000" src="https://edindtu.github.io/ProjectB/images/severity2.png" /></p>
+<p>Be aware that the y axes aren&rsquo;t equal! The purpose of the above image is to create a quick overview of the four types of accident severities for the 49 states.</p>
 <p>Add some fancy plots and text here :D</p>
 <iframe height="500" width="100%" src="https://edindtu.github.io/ProjectB/images/filetest.html" frameBorder="0"></iframe>
 <h1>Outlier analysis</h1>
