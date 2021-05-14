@@ -35,6 +35,8 @@ abbr[title] {
   text-decoration: underline dotted
 }
 
+
+
 b, strong {
   font-weight: bolder
 }
@@ -3980,12 +3982,12 @@ code, .code {
 
 .mw8 {
   max-width: 1024px;
-  max-width: 100rem
+  max-width: 95rem
 }
 
 .mw9 {
   max-width: 1536px;
-  max-width: 96rem
+  max-width: 99rem
 }
 
 .mw-none {
@@ -4216,7 +4218,7 @@ code, .code {
 }
 
 .w-two-thirds {
-  width: 90%
+  width: 70%
 }
 
 .w-auto {
@@ -4305,7 +4307,7 @@ code, .code {
   }
 
   .w-two-thirds-ns {
-    width: 90%
+    width: 70%
   }
 
   .w-auto-ns {
@@ -4485,7 +4487,7 @@ code, .code {
   }
 
   .w-two-thirds-l {
-    width: 100%
+    width: 70%
   }
 
   .w-auto-l {
