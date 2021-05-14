@@ -6,14 +6,14 @@
     <description>Recent content in Projects on  Social data analysis and visualization (02806)</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 May 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://edindtu.github.io/ProjectB/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 14 May 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://edindtu.github.io/ProjectB/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>A deeper look into MapQuest data</title>
       <link>https://edindtu.github.io/ProjectB/post/usaccidents/</link>
-      <pubDate>Tue, 11 May 2021 10:58:08 -0400</pubDate>
+      <pubDate>Fri, 14 May 2021 10:58:08 -0400</pubDate>
       
       <guid>https://edindtu.github.io/ProjectB/post/usaccidents/</guid>
-      <description>DISCLAIMER! To view the images in original size, please right click on them and open in a new tab!
+      <description>DISCLAIMER! Please wait for a minute or two and take a sip of your coffee as the site loads up completely!
 Introduction This is an analysis of countrywide car accidents spanning 49 state in the USA. the accident data are collected from February 2016 to December 2020, using multiple APIs that provide streaming traffic data. Main purpose of this website is to notice any patterns, see if there are hotspot locations, and do a casualty analysis looking at the severity of the accidents.</description>
     </item>
     
